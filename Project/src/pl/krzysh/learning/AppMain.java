@@ -10,5 +10,7 @@ public class AppMain {
 		
 		Homework homework = new Homework(course, "Do something", "something, something, something...");
 		Solution solution = new Solution(student, homework, "This is my solution");
+		
+		System.out.println(solution);
 	}
 }

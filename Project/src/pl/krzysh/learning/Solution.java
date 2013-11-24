@@ -11,4 +11,8 @@ public class Solution {
 		this.text = text;
 		this.homework.solution.add(this);
 	}
+	
+	public String toString() {
+		return student + "'s solution for " + homework;
+	}
 }

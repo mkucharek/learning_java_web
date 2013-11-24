@@ -14,4 +14,8 @@ public class Homework {
 		this.course = course;
 		this.course.homework.add(this);
 	}
+	
+	public String toString() {
+		return "Homework \"" + name + "\" for " + course;
+	}
 }

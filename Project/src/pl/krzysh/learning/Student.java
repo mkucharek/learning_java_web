@@ -8,4 +8,8 @@ public class Student extends User {
 		this.classroom = classroom;
 		this.classroom.student.add(this);
 	}
+	
+	public String toString() {
+		return super.toString() + " (class: " + classroom + ")";
+	}
 }

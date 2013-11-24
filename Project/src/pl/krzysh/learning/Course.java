@@ -15,4 +15,8 @@ public class Course {
 		this.classroom.course.add(this);
 		this.teacher.course.add(this);
 	}
+	
+	public String toString() {
+		return teacher + "'s " + subject + " course for class " + classroom;
+	}
 }

@@ -8,4 +8,8 @@ public class User {
 		this.firstName = firstName;
 		this.surName = surName;
 	}
+	
+	public String toString() {
+		return firstName + " " + surName;
+	}
 }
