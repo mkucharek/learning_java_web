@@ -1,5 +1,8 @@
 package pl.krzysh.exercises.knight;
 
+import org.springframework.stereotype.Component;
+
+@Component("quest2")
 public class Quest2 implements Quest {
 
 	@Override
