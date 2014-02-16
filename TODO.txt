@@ -1,3 +1,2 @@
 * Spring MVC
-* Zale¿noœci na Springa
 * Zadanka z JPassion
