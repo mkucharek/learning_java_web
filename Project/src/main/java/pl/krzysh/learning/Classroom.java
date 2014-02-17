@@ -26,6 +26,10 @@ public class Classroom {
 	public Set<Student> getStudent() {
 		return student;
 	}
+	
+	public void addStudent(Student student) {
+		this.student.add(student);
+	}
 
 	public void setStudent(Set<Student> student) {
 		this.student = student;
