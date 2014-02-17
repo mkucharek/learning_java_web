@@ -4,12 +4,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Solution {
-	public Student student;
-	public Homework homework;
-	public String text;
-	
+	private Student student;
+	private Homework homework;
+	private String text;
+
+	@Override
 	public String toString() {
-		return student + "'s solution for " + homework;
+		return text;
 	}
 
 	public void setStudent(Student student) {
@@ -18,6 +19,10 @@ public class Solution {
 	
 	public Student getStudent() {
 		return this.student;
+	}
+
+	public void setHomework(Homework homework) {
+		this.homework = homework;
 	}
 
 	public void setText(String text) {

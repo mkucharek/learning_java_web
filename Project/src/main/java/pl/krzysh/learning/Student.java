@@ -4,13 +4,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Student extends User {
-	public Classroom classroom;
-	
-	public String toString() {
-		return super.toString() + " (class: " + classroom + ")";
-	}
-	
+	private Classroom classroom;
+
 	public Classroom getClassroom() {
 		return this.classroom;
+	}
+	
+	public void setClassroom(Classroom classroom) {
+		this.classroom = classroom;
 	}
 }

@@ -1,19 +1,15 @@
 package pl.krzysh.learning;
 
-import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class Course {
-	public Classroom classroom;
-	public Teacher teacher;
-	public Subject subject;
-	public HashSet<Homework> homework = new HashSet<Homework>();
-	
-	public String toString() {
-		return teacher + "'s " + subject + " course for class " + classroom;
-	}
+	private Classroom classroom;
+	private Teacher teacher;
+	private Subject subject;
+	private Set<Homework> homework;
 
 	public void setSubject(Subject subject) {
 		this.subject = subject;
@@ -22,19 +18,28 @@ public class Course {
 	public Subject getSubject() {
 		return this.subject;
 	}
-
-	public void assignTeacher(Teacher teacher) {
-		if(this.teacher != null) this.teacher.course.remove(this);
-		this.teacher = teacher;
-		this.teacher.course.add(this);
-	}
 	
 	public Teacher getTeacher() {
 		return this.teacher;
 	}
 
-	public void addHomework(Homework homework) {
-		homework.course = this;
-		this.homework.add(homework);
+	public Classroom getClassroom() {
+		return classroom;
+	}
+
+	public void setClassroom(Classroom classroom) {
+		this.classroom = classroom;
+	}
+
+	public Set<Homework> getHomework() {
+		return homework;
+	}
+
+	public void setHomework(Set<Homework> homework) {
+		this.homework = homework;
+	}
+
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
 	}
 }

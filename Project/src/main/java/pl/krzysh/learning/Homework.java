@@ -1,24 +1,41 @@
 package pl.krzysh.learning;
 
-import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class Homework {
-	public String name;
-	public String description;
-	public Course course;
-	public HashSet<Solution> solution = new HashSet<Solution>();
-	
+	private String name;
+	private String description;
+	private Course course;
+	private Set<Solution> solution;
+
+	@Override
 	public String toString() {
-		return "Homework \"" + name + "\" for " + course;
+		return name + ": " + description;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public Set<Solution> getSolution() {
+		return solution;
+	}
+
+	public void setSolution(Set<Solution> solution) {
+		this.solution = solution;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -29,10 +46,5 @@ public class Homework {
 	
 	public String getDescription() {
 		return this.description;
-	}
-
-	public void addSolution(Solution solution) {
-		solution.homework = this;
-		this.solution.add(solution);
 	}
 }

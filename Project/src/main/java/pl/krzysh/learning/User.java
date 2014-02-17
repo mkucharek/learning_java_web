@@ -1,8 +1,8 @@
 package pl.krzysh.learning;
 
 public abstract class User {
-	public String firstName;
-	public String surName;
+	private String firstName;
+	private String surName;
 	
 	public String toString() {
 		return firstName + " " + surName;

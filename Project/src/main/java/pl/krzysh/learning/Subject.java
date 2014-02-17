@@ -4,8 +4,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Subject {
-	public String name;
+	private String name;
 	
+	@Override
 	public String toString() {
 		return name;
 	}
