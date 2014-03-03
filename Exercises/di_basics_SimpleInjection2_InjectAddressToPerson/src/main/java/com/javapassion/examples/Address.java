@@ -1,6 +1,5 @@
 package com.javapassion.examples;
 
-import org.springframework.stereotype.Component;
 
 public class Address {
 	

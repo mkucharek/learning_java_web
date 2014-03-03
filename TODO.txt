@@ -1,2 +1,2 @@
-* Spring MVC
-* Zadanka z JPassion
+* Przyk³adowe MVC
+* MVC do projektu
