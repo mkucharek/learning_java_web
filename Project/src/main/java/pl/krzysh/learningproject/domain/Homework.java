@@ -1,4 +1,4 @@
-package pl.krzysh.learning;
+package pl.krzysh.learningproject.domain;
 
 import java.util.Set;
 
