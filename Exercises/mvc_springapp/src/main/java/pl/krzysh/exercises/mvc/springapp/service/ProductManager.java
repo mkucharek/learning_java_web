@@ -5,7 +5,7 @@ import java.util.List;
 
 import pl.krzysh.exercises.mvc.springapp.domain.Product;
 
-public interface ProductManager extends Serializable{
+public interface ProductManager extends Serializable {
 
     public void increasePrice(int percentage);
     

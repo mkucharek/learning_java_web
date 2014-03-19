@@ -2,10 +2,19 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- the application context definition for the springapp DispatcherServlet -->
+    
+    <context:component-scan base-package="pl.krzysh.exercises.mvc.springapp" />
+    <mvc:annotation-driven />
 
     <bean id="productManager" class="pl.krzysh.exercises.mvc.springapp.service.SimpleProductManager">
         <property name="products">
@@ -37,18 +46,6 @@
     </bean>
 
     <bean name="/hello.htm" class="pl.krzysh.exercises.mvc.springapp.web.InventoryController">
-        <property name="productManager" ref="productManager"/>
-    </bean>
-    
-    <bean name="/priceincrease.htm" class="pl.krzysh.exercises.mvc.springapp.web.PriceIncreaseFormController">
-        <property name="sessionForm" value="true"/>
-        <property name="commandName" value="priceIncrease"/>
-        <property name="commandClass" value="pl.krzysh.exercises.mvc.springapp.service.PriceIncrease"/>
-        <property name="validator">
-            <bean class="pl.krzysh.exercises.mvc.springapp.service.PriceIncreaseValidator"/>
-        </property>
-        <property name="formView" value="priceincrease"/>
-        <property name="successView" value="hello.htm"/>
         <property name="productManager" ref="productManager"/>
     </bean>
 
