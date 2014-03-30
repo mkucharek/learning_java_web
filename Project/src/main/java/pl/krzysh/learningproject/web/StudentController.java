@@ -1,34 +1,40 @@
 package pl.krzysh.learningproject.web;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import pl.krzysh.learningproject.service.StudentManager;
 
-public class StudentController implements Controller {
+@Controller
+public class StudentController {
 
-    private StudentManager studentManager;
+	@Autowired
+	private StudentManager studentManager;
 
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@RequestMapping(value = "/hello.htm", method = RequestMethod.GET)
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException {
 
-        Map<String, Object> myModel = new HashMap<String, Object>();
-        myModel.put("students", this.studentManager.getStudents());
+		ModelMap model = new ModelMap();
+		model.put("students", this.studentManager.getStudents());
 
-        return new ModelAndView("hello", "model", myModel);
-    }
+		return new ModelAndView("hello", model);
+	}
 
+	public StudentManager getStudentManager() {
+		return studentManager;
+	}
 
-    public void setStudentManager(StudentManager studentManager) {
-        this.studentManager = studentManager;
-    }
+	public void setStudentManager(StudentManager studentManager) {
+		this.studentManager = studentManager;
+	}
 
 }

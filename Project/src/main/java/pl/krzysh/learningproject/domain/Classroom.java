@@ -26,7 +26,7 @@ public class Classroom {
 	public Set<Student> getStudent() {
 		return student;
 	}
-	
+
 	public void addStudent(Student student) {
 		this.student.add(student);
 	}
@@ -38,7 +38,7 @@ public class Classroom {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}

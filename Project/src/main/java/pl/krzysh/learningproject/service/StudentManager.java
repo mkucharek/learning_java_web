@@ -5,8 +5,8 @@ import java.util.List;
 
 import pl.krzysh.learningproject.domain.Student;
 
-public interface StudentManager extends Serializable{
-    
-    public List<Student> getStudents();
-    
+public interface StudentManager extends Serializable {
+
+	public List<Student> getStudents();
+
 }

@@ -3,37 +3,38 @@ package pl.krzysh.learningproject.domain;
 public abstract class User implements Comparable<User> {
 	private String firstName;
 	private String surName;
-	
+
 	public String toString() {
 		return firstName + " " + surName;
 	}
-	
+
 	public void setName(String firstName, String surName) {
 		this.firstName = firstName;
 		this.surName = surName;
 	}
-	
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
+
 	public void setSurName(String surName) {
 		this.surName = surName;
 	}
-	
+
 	public String getFirstName() {
 		return this.firstName;
 	}
-	
+
 	public String getSurName() {
 		return this.surName;
 	}
-	
+
 	@Override
 	public int compareTo(User other) {
 		int surNameCompare = surName.compareTo(other.getSurName());
-		if(surNameCompare != 0) return surNameCompare;
-		
+		if (surNameCompare != 0)
+			return surNameCompare;
+
 		return firstName.compareTo(other.getFirstName());
 	}
 

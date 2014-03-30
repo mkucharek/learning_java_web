@@ -19,7 +19,7 @@ public class Homework {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public Course getCourse() {
 		return course;
 	}
@@ -39,11 +39,11 @@ public class Homework {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public String getDescription() {
 		return this.description;
 	}

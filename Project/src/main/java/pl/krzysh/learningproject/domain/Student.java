@@ -9,7 +9,7 @@ public class Student extends User {
 	public Classroom getClassroom() {
 		return this.classroom;
 	}
-	
+
 	public void setClassroom(Classroom classroom) {
 		this.classroom = classroom;
 	}
