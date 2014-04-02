@@ -11,7 +11,7 @@
 	<h3>
 		<fmt:message key="students" />
 	</h3>
-	<c:forEach items="${model.students}" var="student">
+	<c:forEach items="${students}" var="student">
 		<c:out value="${student.firstName}" />
 		<c:out value="${student.surName}" />
 		<br>
